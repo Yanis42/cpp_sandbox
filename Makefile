@@ -1,4 +1,9 @@
-CXX := g++
+ifeq ($(shell command -v clang++ >/dev/null 2>&1; echo $$?),0)
+  CXX := clang++
+else
+  CXX := g++
+endif
+
 CXXFLAGS := -Wall -Wextra
 INC := -Iinclude
 
