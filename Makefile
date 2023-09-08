@@ -1,6 +1,6 @@
 CXX := g++
 CXXFLAGS := -Wall -Wextra
-INC := -Isrc
+INC := -Iinclude
 
 DEBUG := 0
 
