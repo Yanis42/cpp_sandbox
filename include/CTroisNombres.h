@@ -1,12 +1,12 @@
 #ifndef CTROISNOMBRES_H
 #define CTROISNOMBRES_H
 
-class CTroisNombres
-{
+class CTroisNombres {
     private:
         short nb1;
         short nb2;
         short nb3;
+
     public:
         CTroisNombres();
         ~CTroisNombres();
@@ -21,4 +21,4 @@ class CTroisNombres
         short getNb3();
 };
 
-#endif // CTROISNOMBRES_H
+#endif  // CTROISNOMBRES_H

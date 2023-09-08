@@ -13,7 +13,7 @@ endif
 
 SRC_DIRS := src
 CPP_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.cpp))
-H_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.h))
+H_FILES := $(foreach dir,include,$(wildcard $(dir)/*.h))
 O_FILES := $(foreach f,$(CPP_FILES:.cpp=.o),build/$f)
 
 OUTPUT := program.out
@@ -27,7 +27,10 @@ all: $(OUTPUT)
 clean:
 	rm -rf build $(OUTPUT)
 
-.PHONY: all clean
+format:
+	clang-format-14 -i $(H_FILES) $(CPP_FILES)
+
+.PHONY: all clean format
 
 build/src/%.o: src/%.cpp
 	$(CXX) $(CXXFLAGS) $(OPTFLAGS) $(INC) -c $(OUTPUT_OPTION) $<

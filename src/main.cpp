@@ -1,10 +1,9 @@
-#include <iostream>
 #include "CTroisNombres.h"
+#include <iostream>
 
 using namespace std;
 
-int main()
-{
+int main() {
     CTroisNombres troisNbr;
     short val1, val2, val3;
 
@@ -27,4 +26,3 @@ int main()
     cout << "nb3: " << troisNbr.getNb3() << endl;
     return 0;
 }
-
